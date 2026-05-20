@@ -88,8 +88,7 @@ public class SchoolDaoImpl implements SchoolDao {
                    + "COUNT(cs.student_id) as numStudents "
                    + "FROM course c "
                    + "INNER JOIN course_student cs ON c.cid = cs.course_id "
-                   + "WHERE c.courseCode LIKE 'CS%' "
-                   + "GROUP BY c.cid, c.courseCode, c.courseDesc;";
+                   + "GROUP BY c.cid, c.courseDesc;";
 
         // YOUR CODE ENDS HERE
         return jdbcTemplate.query(sql, new StudentCountMapper());
